@@ -1,0 +1,24 @@
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        m = {}
+
+        for num in nums:
+            
+            m[num] = 1
+
+        # m {2:1, 20:1, 4:1, 10:1, 3:1, 4:1, 5:1}
+
+        # loop through thte keys and add 1 to the key if it exist we increase consq, if not move to next key val
+        res = 0 
+        for key in m:
+            print(key)
+            check = key
+            currMax = 0
+            while check in m:
+                print("LOOP")
+                check -= 1
+                currMax += 1
+                res = max(res, currMax)
+
+        return res
+
